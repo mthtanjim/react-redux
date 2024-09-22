@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-This project was created with [MTH Tanjim](https://www.facebook.com/mthtanjim).
+This project was created by [MTH Tanjim](https://www.facebook.com/mthtanjim).
 
 ## Available Scripts
 
@@ -29,4 +29,3 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
