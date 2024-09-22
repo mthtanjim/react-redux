@@ -1,23 +1,32 @@
 import { useState } from 'react';
 import './App.css';
 import Button from './components/Button';
+import { useDispatch, useSelector } from 'react-redux';
+import { decrement, increment, reset } from './features/counters/counterSlice';
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  // const [count, setCount] = useState(0)
+const counters = useSelector((state) => state.counters)
+const dispatch = useDispatch()
 
   const handleIncrements = () => {
-    setCount(count * 2 + 1)
+    dispatch(increment({
+      id: 3
+    }))
   }
 
   const handleDecrements = () => {
-    setCount(count - 10)
+    dispatch(decrement({
+      name: "tanjim"
+    }))
   }
 
   const handleReset = () => {
-    setCount(0)
+      dispatch(reset())
   }
-  
+
+  console.log("counters:::", counters);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -28,7 +37,7 @@ function App() {
             <h2>
               Total Counts
             </h2>
-            <p>{count}</p>
+            <p>{counters.value}</p>
           </div>
           <Button title="Increments +" handler={() => handleIncrements()} />
 
